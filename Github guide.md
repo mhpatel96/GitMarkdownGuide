@@ -1,4 +1,4 @@
-
+[[_TOC]]
 
 # Git guide
 
@@ -204,6 +204,8 @@ The result shows the options. Fairly advanced.
 
 The command "git branch" will set up another branch. The branch can be named as shown.
 
+NOTE: The default branch was renamed from "master" to "main" in newer git versions. Both mean the same thing, but some legacy repositories may not have the updated name.
+
 ![](./images/new_branch.jpg)
 
 ### Viewing active branch status
@@ -281,6 +283,16 @@ When attempting to merge a changed branch (in this case 'UpdateText' with the ma
 This conflict needs to be resolved in file explorer.
 
 Opening the conflicted file shows the header "HEAD" prefixing the current text in the main branch with the conflicting text from the "UpdateText" branch beneath.
+
+### Pull Requests
+
+The pull request name is slightly misleading, in actuality it is a merge request. When making changes on a branch, some repositories will not allow a direct merge back into main.
+
+A pull request involves adding reviewers who will then have to manually review and approve of any changes before git merges the working branch into "main". Git will trial run the merge before the pull request to ensure there are no conflicts.
+
+### Merge Conflicts
+
+If a file being merged has been changed on the branch being merged into in the interim, git will create a merge conflict. Conflict markers are added to files, and the desired changes need to be selected by the operator.
 
 # Github guide
 
@@ -408,3 +420,6 @@ To combine both commands, use git pull.
 
 ![](./images/git_pull.jpg)
 
+## GUI
+
+There are multiple git GUI clients available, which abstract away the complexity of using the terminal. Recommended ones are Github Desktop (for availability of support), SourceTree for best UI (however can be unstable, and requires an Atlassian account), or Fork which is an excellent all rounder (evaluation copy is free only, commercial requires a one time payment.)
