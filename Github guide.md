@@ -1,3 +1,5 @@
+
+
 # Git guide
 
 Using YT video https://www.youtube.com/watch?v=tRZGeaHPoaw&ab_channel=KevinStratvert
@@ -10,7 +12,7 @@ Once Git is installed, any terminal program can be used such as GitBash (recomme
 
 ## Configuration
 
-Initial configuration screen. The last line is a help request that will list all commands.
+Initial configuration screen. The last line is a help request that will list all commands. This sets the global name/email. These can also be configured for individual git repositories separately. Each commit will have a name and email tied to it.
 
 ![](./images/gitbash_config_screen.jpg)
 
@@ -21,11 +23,15 @@ Useful GitBash commands –
 
 ## Example procedure
 
-NOTE: Gitbash used as terminal.
+NOTE: Bash used as terminal.
+
+NOTE: Bash will not like spaces in a filepath, and will treat each space as an argument separator. If there are spaces, enclose the path in double quotes.
+
+NOTE: By default, Windows uses a backslash character to separate items in a filepath. *Bash will not recognise backslashes*, so these need to be changed to forward slashes instead when copying a file path from windows explorer.
 
 ### Finding the files locally and setting a repository
 
-This shows the local location of the files in the worked youtube example.
+This shows the local location of the files in the worked YouTube example.
 
 ![](./images/location_of_local_git_files.jpg)
 
@@ -43,35 +49,37 @@ Showing hidden files (above) reveals that Git has placed additional hidden files
 
 ### Git status and tracking
 
-Git status shows the status of the repository, currently on the main branch. All files are currently untracked so show in red.
+"Git status" shows the status of the repository, currently on the main branch. All files are currently untracked so show in red.
 
 The Git folder tree is highlighted.
 
 ![](./images/git_status.jpg)
 
-The git add command for index.htm will set git to track index.htm.
+The "git add" command for "index.htm" will set git to track index.htm.
 
 ![](./images/tracking_a_file.jpg)
 
-Git status now shows that the index.htm file is tracked (in green).
+Git status now shows that the "index.htm" file is tracked (in green).
+
+"git add -A" will add all files, untracked or tracked but modified.
 
 ![](./images/one_file_tracked.jpg)
 
-The rm command will remove (untrack) a file that is tracked. In this case index.htm.
+The "rm" command will remove (untrack) a file that is tracked. In this case "index.htm".
 
 ![](./images/untracking_a_file.jpg)
 
 ### Ignoring a file
 
-To set a file to be completely ignored by Git (it may for example be confidential), create a new .TXT file in the folder.
+To set a file to be completely ignored by Git (it may for example be confidential), create a new ".txt" file in the folder.
 
 ![](./images/creating_git_ignore_file.jpg)
 
-Re-title the file to .gitignore
+Re-title the file to ".gitignore".
 
 ![](./images/re_title_git_ignore.jpg)
 
-Open the file in Notepad etc.
+Open the file in a text editor (e.g., Notepad etc).
 
 ![](./images/open_ignore_file.jpg)
 
@@ -86,7 +94,7 @@ Checking status reveals the ignore file, but not the file that is ignored.
 
 ### Tracking all files
 
-Now that the salary file in the example is ignored, set all remaining files to be tracked and show status. Commands git add --all, git add -A or git add . (for the whole folder) will work.
+Now that the salary file in the example is ignored, set all remaining files to be tracked and show status. Commands "git add --all", "git add -A" or "git add ." (for the whole folder) will work.
 
 ![](./images/tracking_a_file.jpg)
 
@@ -94,7 +102,7 @@ Now that the salary file in the example is ignored, set all remaining files to b
 
 ### Committing files
 
-This command will commit all files to the repository.
+The "git commit" command will commit files to the repository. 
 
 ![](./images/commit_files.jpg)
 
@@ -104,7 +112,7 @@ This is the result of that commit.
 
 ### Updating one of the files (index.htm)
 
-Open index.htm, make a change and save it.
+Open "index.htm", make a change and save it.
 
 ![](./images/update_file.jpg)
 
@@ -112,13 +120,13 @@ Checking status after the change.
 
 ![](./images/file_changed.jpg)
 
-The git diff command will show the differences between the file that was changed.
+The "git diff" command will show the differences between the file that was changed.
 
 ![](./images/git_diff.jpg)
 
 ### Staging status
 
-The git add command will now move the changed file to staging status from working. Staging is a holding place.
+The "git add" command will now move the changed file to staging status from working. Staging is a holding place.
 
 ![](./images/change_to_staging.jpg)
 
@@ -126,39 +134,39 @@ Files within git will exist in one three status options. working files, staging,
 
 ![](./images/file_status_options.jpg)
 
-Use the command git restore --staged index.htm to return this file to working status.
+Use the command "git restore --staged index.htm" to return this file to working status.
 
 ![](./images/staged_to_working.jpg)
 
 ### Committing all files
 
-This command will commit all files, bypassing staging.
+The "git commit -a" command will commit all files, bypassing staging.
 
 ![](./images/commit_all.jpg)
 
 ### Renaming files
 
-Command git mv "old name" "new name" will rename a file.
+Command "git mv ${old name} ${new name}" will rename a file.
 
 ![](./images/rename_file.jpg)
 
 ### Add a note to a commit
 
-Use commit -m "note" to add a note when committing.
+Use "git commit -m ${Commit message}" to add a note when committing.
 
 ![](./images/add_note_to_commit.jpg)
 
 ### Log of all commits
 
-The git log command will list the history of all commits.
+The "git log" command will list the history of all commits.
 
 ![](./images/commit_log.jpg)
 
-Or use git log --oneline to show an abbreviated version.
+Or use "git log --oneline" to show an abbreviated version.
 
 ![](./images/commit_log_brief.jpg)
 
-The command git log -p will display more detail of each previous commit.
+The command "git log -p" will display more detail of each previous commit.
 
 ![](./images/commit_details.jpg)
 
@@ -170,19 +178,19 @@ Use the up arrow to step back through commands.
 
 ![](./images/step_back.jpg)
 
-To exit this view press Q.
+To exit this view press the "Q" key.
 
 ![](./images/exit_commit_view.jpg)
 
 ### Undo a commit
 
-The command git reset c193894 (this example) will undo a specific commit.
+The command "git reset ${Commit ID}" (c193894 in this example) will undo a specific commit.
 
 ![](./images/undo_commit.jpg)
 
 ### Rebasing
 
-It's possible to modify the order in which the commits appear with the rebase command.
+It's possible to modify the order in which the commits appear with the "rebase" command.
 
 ![](./images/rebase.jpg)
 
@@ -194,19 +202,19 @@ The result shows the options. Fairly advanced.
 
 ### Creating another branch
 
-The command git branch will set up another branch. The branch can be named as shown.
+The command "git branch" will set up another branch. The branch can be named as shown.
 
 ![](./images/new_branch.jpg)
 
 ### Viewing active branch status
 
-To view all branches in the repository, just use the git branch command. All branches will be displayed with the active branch asterisked.
+To view all branches in the repository, just use the "git branch" command. All branches will be displayed with the active branch asterisked.
 
 ![](./images/branch_display.jpg)
 
 ### Switching branches
  
-To switch to another branch use the git switch command followed by the name of the branch.
+To switch to another branch use the "git switch" command followed by the name of the branch.
 
 <img src="images/switch_branch.jpg" style= "width: 1000px"/> 
 
@@ -214,15 +222,15 @@ To switch to another branch use the git switch command followed by the name of t
 
 ### Creating another branch and switching to it
 
-It is also possible to create a branch and switch to it using the git switch -c command.
+It is also possible to create a branch and switch to it using the "git switch -c" command.
 
 ![](./images/create_switch_branch.jpg)
 
-The new branch will be created and switched to. Use the git branch command to check status.
+The new branch will be created and switched to. Use the "git branch" command to check status.
 
 ### Editing within a branch
 
-In this example, having switched to the 'FixTemp' branch, all files displayed will now be in that branch. View the files in Explorer and open the file to edit.
+In this example, having switched to the "FixTemp" branch, all files displayed will now be in that branch. View the files in Explorer and open the file to edit.
 
 ![](./images/editing_in_branch.jpg)
 
@@ -234,13 +242,13 @@ Now checking status after editing. The modified file is highlighted red.
 
 ### Committing a change within a branch
 
-As before, to commit the change use the command git commit (in this case suffixed -a, -m, then with a note added for this commit).
+As before, to commit the change use the command "git commit" (in this case suffixed -a, -m, then with a note added for this commit).
 
 ![](./images/commit_branch_edit.jpg)
 
 ### Changing branches
 
-To change branches, in this case switching back to the main branch, use the git switch command followed by the branch name.
+To change branches, in this case switching back to the main branch, use the "git switch" command followed by the branch name.
 
 ![](./images/git_switch.jpg)
 
@@ -248,13 +256,13 @@ Note that the files in the main branch (now displayed) are not changed.
 
 ### Merging changes to branches
 
-To merge the changes from the Fixtemp branch in the example back to the main branch, use the git merge command. The command includes a note, then the name of the branch.
+To merge the changes from the Fixtemp branch in the example back to the main branch, use the "git merge" command. The command includes a note, then the name of the branch.
 
 ![](./images/git_merge.jpg)
 
 ### Deleting a branch
 
-Once changes have been merged, in this example to the main branch, the branch can be deleted with git branch -d, then the name of the branch.
+Once changes have been merged, in this example to the main branch, the branch can be deleted with the command "git branch -d ${Branch name}".
 
 ![](./images/delete_branch.jpg)
 
@@ -272,7 +280,7 @@ When attempting to merge a changed branch (in this case 'UpdateText' with the ma
 
 This conflict needs to be resolved in file explorer.
 
-Opening the conflicted file shows the header HEAD prefixing the current text in the main branch with the conflicting text from the UpdateText branch beneath.
+Opening the conflicted file shows the header "HEAD" prefixing the current text in the main branch with the conflicting text from the "UpdateText" branch beneath.
 
 # Github guide
 
@@ -280,9 +288,7 @@ Opening the conflicted file shows the header HEAD prefixing the current text in 
 
 Reminder that git is a version control system that works through a repository hosted on a local computer.
 
-Github is an extension of that where the hosting takes place in the cloud, enabling collaboration in teams and issue tracking etc.
-
-Start by creating a Github account with login.
+Github in this scenario is where the hosting takes place in the cloud, enabling collaboration in teams and issue tracking etc. Note that there are many more git cloud providers.
 
 ### Creating a Github repository
 
