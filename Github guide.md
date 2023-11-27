@@ -218,8 +218,6 @@ To view all branches in the repository, just use the "git branch" command. All b
  
 To switch to another branch use the "git switch" command followed by the name of the branch.
 
-<img src="images/switch_branch.jpg" style= "width: 1000px"/> 
-
 ![](./images/switch_branch.jpg)
 
 ### Creating another branch and switching to it
@@ -237,8 +235,6 @@ In this example, having switched to the "FixTemp" branch, all files displayed wi
 ![](./images/editing_in_branch.jpg)
 
 Now checking status after editing. The modified file is highlighted red.
-
-<img src="images/check_status_after_branch_edit.jpg" style= "width: 1000px"/>
 
 ![](./images/check_status_after_branch_edit.jpg)
 
